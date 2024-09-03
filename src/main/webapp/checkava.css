@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #34495e;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header .logo img {
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #34495e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 30px 20px;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #ff4b2b;
+    border-radius: 20px;
+}
+
+section#availability-check {
+    padding: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+section#availability-check h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #ff4b2b;
+}
+
+form#availability-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form#availability-form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+form#availability-form select,
+form#availability-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form#availability-form button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    color: white;
+    background-color: #34495e;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+form#availability-form button#reset {
+    background-color: #34495e;
+}
+
+form#availability-form button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    background-color: #239b56; 
+}
+
+form#availability-form button#reset:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    background-color: #c0392b;
+}
+
+
+#result-display {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    display: none;
+}
+
+footer {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}

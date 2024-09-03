@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant - Customer Registration</title>
+    <link rel="stylesheet" href="customerreg.css">
+</head>
+
+<body>
+    <section id="registration">
+        <h1>ABC Restaurant</h1>
+        <h2>Customer Registration</h2>
+
+        <form id="registration-form" action="registerCustomer" method="POST">
+            <!-- ID Field (Hidden) -->
+            <input type="hidden" id="id" name="id" value="">
+
+            <!-- Name Field -->
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Email Field -->
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Phone Number Field -->
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Address Field -->
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <!-- Password Field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Submit and Cancel Buttons -->
+            <button type="submit">Register</button>
+            <button type="button" id="cancel" onclick="cancelRegistration()">Cancel</button>
+        </form>
+
+        <!-- Login Link -->
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+    </section>
+
+    <!-- Popup Message -->
+    <div id="popup" class="popup" style="display: none;">
+        <span class="popup-content">Registration successful...</span>
+    </div>
+
+    <script src="customerreg.js"></script>
+    <script>
+        function cancelRegistration() {
+            document.getElementById('registration-form').reset();
+        }
+
+        // Example code for showing popup message
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('popup').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

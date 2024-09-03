@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #34495e;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ff4b2b;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.login-container input {
+    width: 97%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 48%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-group button:hover {
+    background-color: #ff4b2b;
+    transform: scale(1.05);
+}
+
+.login-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-container a {
+    color: #ff4b2b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="logo.png" alt="ABC Restaurant Logo" height="100px" width="140px">
+        </div><br>
+        <h2>Login to ABC Restaurant</h2>
+        <form id="login-form" action="login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="button-group">
+                <button type="submit">Login</button>
+                <button type="button" id="cancel-btn" onclick="window.location.href='home.html'">Cancel</button>
+            </div>
+
+            <p>Don't have an account? <a href="customerreg.html">Click here to Sign up</a></p>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

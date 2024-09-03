@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant - Search Facilities</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="ABC Restaurant Logo" height="170px" width="210px">
+    </div><br><br>
+    <nav>
+        <ul>
+            <li><img src="h1.png" alt="Home" height="35px" width="35px"><a href="home.html">Home</a></li>
+            <li><img src="m1.png" alt="Menu" height="35px" width="35px"><a href="Menu.html">Products & Services</a></li>
+            <li><img src="a1.png" alt="Availability" height="35px" width="35px"><a href="checkava.html">Check Availability</a></li>
+            <li><img src="q1.png" alt="Queries" height="35px" width="35px"><a href="query.html">Submit Queries</a></li>
+            <li><img src="r1.png" alt="Reservations" height="35px" width="35px"><a href="reservation.html">Reservations</a></li>
+            <li><img src="p1.png" alt="Payment" height="35px" width="38px"><a href="payment.html">Make Payment</a></li>
+            <li><img src="search2.png" alt="Search" height="35px" width="35px"><a href="search.html">Search Facilities</a></li>
+            <li><img src="g1.png" alt="Gallery" height="35px" width="35px"><a href="gallery.html">Gallery</a></li>
+            <li><img src="l1.png" alt="Login" height="35px" width="35px"><a href="customerreg.html">Register</a></li>
+            <li><img src="lo1.png" alt="Login" height="35px" width="35px"><a href="stafflog.html">Staff Login</a></li>
+        </ul>
+    </nav>
+</header>
+    <section id="search">
+        <h2>Search Facilities</h2>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for services...">
+            <button onclick="displayFacilities()">Search</button>
+            <button type="submit" id="cancel">Cancel</button>
+        </div>
+        <div id="search-results"></div>
+    </section>
+
+
+    <script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #34495e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #34495e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 30px 20px;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #ff4b2b;
+    border-radius: 20px;
+}
+
+/* Container and Payment Options Styles */
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #34495e;
+}
+
+.payment-options h2 {
+    text-align: center;
+    color: #ff4b2b;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    margin-bottom: 20px;
+}
+
+.payment-method label {
+    font-size: 16px;
+    color: #34495e;
+    cursor: pointer;
+}
+
+.payment-method p {
+    margin-left: 25px;
+    font-size: 14px;
+    color: #555;
+}
+
+.card-details,
+.cash-details {
+    margin-top: 20px;
+}
+
+.card-details label,
+.cash-details label {
+    font-size: 14px;
+    color: #555;
+}
+
+.card-details input,
+.cash-details input,
+.cash-details select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.cancel-btn {
+    background-color: #34495e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-btn{
+    background-color: #34495e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #239b56;
+    transform: scale(1.05);
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .payment-options h2 {
+        font-size: 1.8em;
+    }
+
+    .payment-method label {
+        font-size: 14px;
+    }
+
+    .submit-btn,
+    .cancel-btn {
+        font-size: 14px;
+    }
+}

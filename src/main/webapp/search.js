@@ -1,0 +1,58 @@
+function displayFacilities() {
+    const facilitiesHTML = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ABC Restaurant - Facilities</title>
+        <link rel="stylesheet" href="facilities.css">
+    </head>
+    <body>
+        <section id="facilities">
+            <h2>Our Facilities</h2>
+            <div class="facility-list">
+                <div class="facility-item">
+                    <img src="16.jpg" alt="Dining Area">
+                    <h3>Luxury Dining Area</h3>
+                    <p>Experience our elegantly designed dining area with comfortable seating and ambient lighting.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="18.jpg" alt="Private Dining Rooms">
+                    <h3>Private Dining Rooms</h3>
+                    <p>Enjoy a private dining experience with our exclusive rooms designed for special occasions.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="12.jpg" alt="Parking">
+                    <h3>Ample Parking Space</h3>
+                    <p>We offer ample parking space for your convenience with dedicated spots for easy access.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="19.jpg" alt="Free Wi-Fi">
+                    <h3>Free Wi-Fi</h3>
+                    <p>Stay connected with our complimentary high-speed Wi-Fi available throughout the restaurant.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="20.jpg" alt="Outdoor Seating">
+                    <h3>Outdoor Seating</h3>
+                    <p>Enjoy the fresh air with our beautiful outdoor seating area surrounded by lush greenery.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="17.jpg" alt="Kids Play Area">
+                    <h3>Kids Play Area</h3>
+                    <p>Your kids can have fun in our safe and entertaining play area while you dine.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 ABC Restaurant. All rights reserved.</p>
+        </footer>
+
+        <script src="facilities.js"></script>
+    </body>
+    </html>
+    `;
+
+    document.getElementById('search-results').innerHTML = facilitiesHTML;
+}

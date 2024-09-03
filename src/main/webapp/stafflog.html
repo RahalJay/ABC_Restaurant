@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant - Staff Login</title>
+    <link rel="stylesheet" href="stafflog.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="logo.png" alt="ABC Restaurant Logo" height="100px" width="140px">
+        </div><br>
+        <h2>ABC Restaurant Staff Login</h2>
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="role">Select Role</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="staff">Staff</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <div class="button-group">
+                <button type="submit">Login</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </div>
+
+            <p>Don't have an account? <a href="staffregstaff.html">Click here to Sign up</a></p>
+        </form>
+    </div>
+
+    <script src="stafflog.js"></script>
+
+
+</body>
+
+</html>

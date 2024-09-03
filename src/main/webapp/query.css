@@ -1,0 +1,166 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #34495e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #34495e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li img {
+    margin-right: 8px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #ff4b2b;
+    border-radius: 20px;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+#query {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#query h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ff4b2b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form select {
+    background-color: white;
+}
+
+form button[type="submit"],
+form button[type="button"] {
+    background-color: #34495e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+form button[type="submit"]:hover {
+    background-color: #239b56;
+    transform: scale(1.05);
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    #query {
+        padding: 15px;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    form button[type="submit"],
+    form button[type="button"] {
+        font-size: 14px;
+    }
+}
