@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,7 +29,7 @@ import com.abcrestaurant.service.ReservationService;
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        List<Reservation> reservations = reservationService.getAllReservations();
 	        request.setAttribute("reservations", reservations);
-	        request.getRequestDispatcher("WEB-INF/view/reservations.jsp").forward(request, response);
+	        request.getRequestDispatcher("/reservations.js").forward(request, response);
 	    }
 
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,12 +44,12 @@ import com.abcrestaurant.service.ReservationService;
 	            reservationService.addReservation(customerId, reservationDate, time, type);
 	            response.setContentType("text/html");
 	            response.getWriter().write("<div class='popup' style='display: block;'><span class='popup-content'>Reservation successful...</span></div>");
-	            response.setHeader("Refresh", "3; URL=reservations.jsp");  // Redirect to reservations page after 3 seconds
+	            response.setHeader("Refresh", "3; URL=reservations.js"); 
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	            response.setContentType("text/html");
 	            response.getWriter().write("<div class='popup' style='display: block;'><span class='popup-content'>Reservation failed. Please try again.</span></div>");
-	            response.setHeader("Refresh", "3; URL=reservations.jsp");
+	            response.setHeader("Refresh", "3; URL=reservations.js");
 	        }
 	    }
 	}

@@ -2,6 +2,7 @@ package com.abcrestaurant.dao;
 
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +13,6 @@ public class CustomerDAO {
 	
     // Method to add a new customer to the database
     public void addCustomer(Customer customer) {
-        // Updated SQL query to include phone and address fields
         String query = "INSERT INTO customer (name, email, phone, address, password) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -46,10 +46,14 @@ public class CustomerDAO {
             
             catch (SQLException e) {
                 e.printStackTrace();
-                throw e; // Throw the exception to the caller to handle it appropriately
+                throw e; 
             }
         }
         return null;
     }
 
 }
+
+
+
+

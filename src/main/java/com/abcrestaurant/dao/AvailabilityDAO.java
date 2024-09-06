@@ -1,6 +1,7 @@
 package com.abcrestaurant.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +12,6 @@ import com.abcrestaurant.model.Availability;
 
 public class AvailabilityDAO {
 
-    // Method to get available slots based on date, time, and service type
     public List<Availability> getAvailability1(java.util.Date date, String serviceType) {
         List<Availability> availabilityList = new ArrayList<>();
         String query = "SELECT * FROM availability WHERE date = ? AND service_type = ?";
@@ -40,7 +40,6 @@ public class AvailabilityDAO {
     }
 
 	public List<Availability> getAvailability(java.util.Date date, String serviceType) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

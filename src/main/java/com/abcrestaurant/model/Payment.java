@@ -11,7 +11,6 @@ public class Payment {
     private Date paymentDate;
     private String status;
 
-    // Constructor
     public Payment(int paymentId, int customerId, double amount, String paymentMethod, java.util.Date paymentDate2, String status) {
         this.paymentId = paymentId;
         this.customerId = customerId;
@@ -21,7 +20,6 @@ public class Payment {
         this.status = status;
     }
 
-    // Getters and Setters
     public int getPaymentId() {
         return paymentId;
     }

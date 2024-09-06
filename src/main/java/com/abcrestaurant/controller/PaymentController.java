@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.sql.Date;
 
 import javax.servlet.ServletException;
@@ -26,7 +27,7 @@ public class PaymentController extends HttpServlet {
         int customerId = Integer.parseInt(request.getParameter("customerId"));
         double amount = Double.parseDouble(request.getParameter("amount"));
         String paymentMethod = request.getParameter("paymentMethod");
-        Date paymentDate = new Date(customerId); // Current date
+        Date paymentDate = new Date(customerId); 
         String status = "Completed";
 
         Payment payment = new Payment(0, customerId, amount, paymentMethod, paymentDate, status);
@@ -35,7 +36,7 @@ public class PaymentController extends HttpServlet {
 
         response.setContentType("text/html");
         response.getWriter().write("<div class='popup' style='display: block;'><span class='popup-content'>Payment processed successfully...</span></div>");
-        response.setHeader("Refresh", "3; URL=paymentSuccess.jsp");  // Redirect to payment success page after 3 seconds
+        response.setHeader("Refresh", "3; URL=paymentSuccess.js"); 
     }
 }
 

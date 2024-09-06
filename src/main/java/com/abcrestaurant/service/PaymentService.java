@@ -25,12 +25,10 @@ public class PaymentService {
         return instance;
     }
 
-    // Method to process a payment
     public void processPayment(Payment payment) {
         paymentDAO.addPayment(payment);
     }
 
-    // Method to get payments by customer ID
     public List<Payment> getPaymentsByCustomerId(int customerId) {
         return paymentDAO.getPaymentsByCustomerId(customerId);
     }

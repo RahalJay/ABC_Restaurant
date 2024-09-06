@@ -26,7 +26,7 @@ public class CustomerService {
     }
 
     public void registerCustomer(String name, String email, String phone, String address, String password) {
-        // Create a new Customer object with the provided details
+        // Create a new Customer object 
         Customer customer = new Customer(0, password, password, password, password, password);
         customer.setName(name);
         customer.setEmail(email);
@@ -43,8 +43,10 @@ public class CustomerService {
     }
 
 	public void addCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		
 	}
 
 }
+
+
+

@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -33,11 +34,11 @@ import com.abcrestaurant.service.QueryService;
 	            queryService.submitQuery(query);
 	            response.setContentType("text/html");
 	            response.getWriter().write("<div class='popup' style='display: block;'><span class='popup-content'>Query submitted successfully...</span></div>");
-	            response.setHeader("Refresh", "3; URL=queryForm.jsp");  // Redirect to the query form page after 3 seconds
+	            response.setHeader("Refresh", "3; URL=queryForm.js");  
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	            request.setAttribute("errorMessage", "Query submission failed. Please try again.");
-	            request.getRequestDispatcher("WEB-INF/view/queryForm.jsp").forward(request, response);
+	            request.getRequestDispatcher("/queryForm.js").forward(request, response);
 	        }
 	    }
 	}

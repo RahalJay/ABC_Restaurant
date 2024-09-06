@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -23,7 +24,7 @@ public class StaffController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/view/staffLogin.jsp").forward(request, response);
+        request.getRequestDispatcher("/staffLogin.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,8 +34,7 @@ public class StaffController extends HttpServlet {
         try {
             Staff staff = staffService.getStaffByEmail(email);
             if (staff != null && staff.getPassword().equals(password)) {
-                // Redirect to staff dashboard
-                response.sendRedirect("staffDashboard.jsp");
+                response.sendRedirect("staffDashboard.js");
             } else {
                 request.setAttribute("errorMessage", "Invalid email or password.");
                 request.getRequestDispatcher("WEB-INF/view/staffLogin.jsp").forward(request, response);
@@ -42,7 +42,7 @@ public class StaffController extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Login failed. Please try again.");
-            request.getRequestDispatcher("WEB-INF/view/staffLogin.jsp").forward(request, response);
+            request.getRequestDispatcher("/staffLogin.js").forward(request, response);
         }
     }
 }

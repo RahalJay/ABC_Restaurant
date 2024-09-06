@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcrestaurant.model.Customer;
 import com.abcrestaurant.service.CustomerService;
 
-@WebServlet("/registerCustomer")  // Updated to match the form's action URL
+@WebServlet("/registerCustomer") 
 public class CustomerController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -23,7 +24,7 @@ public class CustomerController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/view/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/register.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,15 +46,19 @@ public class CustomerController extends HttpServlet {
                 customerService.addCustomer(customer);
                 response.setContentType("text/html");
                 response.getWriter().write("<div class='popup' style='display: block;'><span class='popup-content'>Registration successful...</span></div>");
-                response.setHeader("Refresh", "3; URL=login.jsp");  // Redirect to login page after 3 seconds
+                response.setHeader("Refresh", "3; URL=login.js");  
             } else {
                 request.setAttribute("errorMessage", "Email already registered.");
-                request.getRequestDispatcher("WEB-INF/view/register.jsp").forward(request, response);
+                request.getRequestDispatcher("/register.js").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Registration failed. Please try again.");
-            request.getRequestDispatcher("WEB-INF/view/register.jsp").forward(request, response);
+            request.getRequestDispatcher("/register.js").forward(request, response);
         }
     }
 }
+
+
+
+

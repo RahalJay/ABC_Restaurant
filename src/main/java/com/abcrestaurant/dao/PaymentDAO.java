@@ -1,6 +1,7 @@
 package com.abcrestaurant.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +12,6 @@ import com.abcrestaurant.model.Payment;
 
 public class PaymentDAO {
 
-    // Method to add a new payment to the database
     public void addPayment(Payment payment) {
         String query = "INSERT INTO payment (customer_id, amount, payment_method, payment_date, status) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -27,7 +27,6 @@ public class PaymentDAO {
         }
     }
 
-    // Method to retrieve all payments by a customer ID
     public List<Payment> getPaymentsByCustomerId(int customerId) {
         List<Payment> payments = new ArrayList<>();
         String query = "SELECT * FROM payment WHERE customer_id = ?";

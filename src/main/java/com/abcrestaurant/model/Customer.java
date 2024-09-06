@@ -9,7 +9,6 @@ public class Customer {
     private String address;
     private String password;
 
-    // Constructor with all fields
     public Customer(int id, String name, String email, String phone, String address, String password) {
         this.customerid = id;
         this.name = name;
@@ -42,3 +41,7 @@ public class Customer {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 }
+
+
+
+

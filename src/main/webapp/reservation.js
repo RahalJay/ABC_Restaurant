@@ -17,7 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the popup when the form is submitted
     reservationForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevents the default form submission
-        popup.style.display = 'flex'; // Shows the popup
+
+        // Display popup message
+        popup.style.display = 'block';
+
+        setTimeout(function () {
+            popup.style.display = 'none';
+        }, 3000);
+
+        // Send the form data to the servlet
+        sendPostRequest();
     });
 
     // Close the popup and reset the form when the close button is clicked
@@ -32,4 +41,36 @@ document.addEventListener('DOMContentLoaded', function () {
     cancelButton.addEventListener('click', function () {
         window.location.href = 'home.html'; // Redirects to the home page
     });
+
+    function sendPostRequest() {
+        const url = '/abcresturant/reservation'; // Ensure this URL matches your servlet's mapping
+
+        // Collect form data
+        const formData = new URLSearchParams();
+        formData.append('id', reservationIDField.value);
+        formData.append('customerId', document.getElementById('customer-id').value);
+        formData.append('reservationDate', document.getElementById('reservation-date').value);
+        formData.append('reservationTime', document.getElementById('reservation-time').value);
+        formData.append('reservationType', document.getElementById('reservation-type').value);
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Sending data as form URL encoded
+            },
+            body: formData.toString(), // Convert form data to URL-encoded string
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Assuming the servlet returns a JSON response
+        })
+        .then(result => {
+            console.log('Success:', result);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
 });

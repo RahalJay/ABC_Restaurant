@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -25,7 +26,7 @@ public class MenuController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Menu> menuList = menuService.getAllMenuItems();
         request.setAttribute("menuList", menuList);
-        request.getRequestDispatcher("WEB-INF/view/menu.jsp").forward(request, response);
+        request.getRequestDispatcher("/menu.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,6 +1,7 @@
 package com.abcrestaurant.controller;
 
 import java.io.IOException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +27,7 @@ public class AvailabilityController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/view/checkAvailability.jsp").forward(request, response);
+        request.getRequestDispatcher("/checkAvailability.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,11 +38,11 @@ public class AvailabilityController extends HttpServlet {
             Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
             List<Availability> availableSlots = availabilityService.checkAvailability(date, serviceType);
             request.setAttribute("availableSlots", availableSlots);
-            request.getRequestDispatcher("WEB-INF/view/checkAvailability.jsp").forward(request, response);
+            request.getRequestDispatcher("/checkAvailability.js").forward(request, response);
         } catch (ParseException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Invalid date format.");
-            request.getRequestDispatcher("WEB-INF/view/checkAvailability.jsp").forward(request, response);
+            request.getRequestDispatcher("/checkAvailability.js").forward(request, response);
         }
     }
     }
