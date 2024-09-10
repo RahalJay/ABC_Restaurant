@@ -2,23 +2,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login-form');
     const cancelButton = document.getElementById('cancel-btn');
 
-    // Handle form submission
     loginForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); 
 
         const role = document.getElementById('role').value;
 
         if (role === 'staff') {
-            window.location.href = 'staffho.html'; // Redirect to staff home
+            window.location.href = 'staffho.html'; 
         } else if (role === 'admin') {
-            window.location.href = 'adminmanage.html'; // Redirect to admin home
+            window.location.href = 'adminmanage.html'; 
         } else {
-            alert('Please select a valid role.'); // Ensure a role is selected
+            alert('Please select a valid role.'); 
         }
     });
 
-    // Redirect to the home page when the cancel button is clicked
     cancelButton.addEventListener('click', function () {
-        window.location.href = 'home.html'; // Redirects to home page
+        window.location.href = 'home.html'; 
     });
 });

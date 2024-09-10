@@ -12,7 +12,6 @@ import com.abcrestaurant.model.Menu;
 
 public class MenuDAO {
 
-    // Method to add a new menu item to the database
     public void addMenuItem(Menu menu) {
         String query = "INSERT INTO menu_items (name, description, price, category) VALUES (?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -27,7 +26,6 @@ public class MenuDAO {
         }
     }
 
-    // Method to retrieve all menu items from the database
     public List<Menu> getAllMenuItems() {
         List<Menu> menuList = new ArrayList<>();
         String query = "SELECT * FROM menu";
@@ -48,7 +46,6 @@ public class MenuDAO {
         return menuList;
     }
 
-    // Method to retrieve a menu item by ID
     public Menu getMenuItemById(int id) {
         String query = "SELECT * FROM menu WHERE id = ?";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -69,7 +66,6 @@ public class MenuDAO {
         return null;
     }
 
-    // Method to update a menu item
     public void updateMenuItem(Menu menu) {
         String query = "UPDATE menu SET name = ?, description = ?, price = ?, category = ? WHERE id = ?";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -85,7 +81,6 @@ public class MenuDAO {
         }
     }
 
-    // Method to delete a menu item by ID
     public void deleteMenuItem(int id) {
         String query = "DELETE FROM menu WHERE id = ?";
         try (Connection connection = DBConnectionFactory.getConnection();

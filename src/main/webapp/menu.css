@@ -42,7 +42,6 @@ nav ul li a img {
     margin-right: 10px;
 }
 
-/* Menu & Services Styles */
 #menu, #services {
     padding: 20px;
     margin: 20px auto;
@@ -94,7 +93,6 @@ nav ul li a img {
     color: #555;
 }
 
-/* Footer Styles */
 footer {
     text-align: center;
     padding: 15px 0;

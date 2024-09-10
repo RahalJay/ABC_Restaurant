@@ -26,7 +26,7 @@ public class CustomerService {
     }
 
     public void registerCustomer(String name, String email, String phone, String address, String password) {
-        // Create a new Customer object 
+
         Customer customer = new Customer(0, password, password, password, password, password);
         customer.setName(name);
         customer.setEmail(email);
@@ -34,7 +34,6 @@ public class CustomerService {
         customer.setAddress(address);
         customer.setPassword(password);
         
-        // Add the new customer using DAO
         customerDAO.addCustomer(customer);
     }
 

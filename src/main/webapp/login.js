@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sendPostRequest();
     });
 
-    // Handle cancel button click
     cancelButton.addEventListener("click", function () {s
         loginForm.reset();
     });
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function sendPostRequest() {
         const url = '/abcrestaurant/login'; 
 
-        // Collect form data
         const formData = new URLSearchParams();
         formData.append('username', document.getElementById('username').value);
         formData.append('password', document.getElementById('password').value);

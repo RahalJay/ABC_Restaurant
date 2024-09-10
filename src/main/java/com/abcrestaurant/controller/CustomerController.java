@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcrestaurant.model.Customer;
 import com.abcrestaurant.service.CustomerService;
 
-@WebServlet("/registerCustomer") 
+@WebServlet("/customerreg") 
 public class CustomerController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -24,7 +24,7 @@ public class CustomerController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/register.js").forward(request, response);
+        request.getRequestDispatcher("/customerreg.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,12 +49,12 @@ public class CustomerController extends HttpServlet {
                 response.setHeader("Refresh", "3; URL=login.js");  
             } else {
                 request.setAttribute("errorMessage", "Email already registered.");
-                request.getRequestDispatcher("/register.js").forward(request, response);
+                request.getRequestDispatcher("/customerreg.js").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Registration failed. Please try again.");
-            request.getRequestDispatcher("/register.js").forward(request, response);
+            request.getRequestDispatcher("/customerreg.js").forward(request, response);
         }
     }
 }

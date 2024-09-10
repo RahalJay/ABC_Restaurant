@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcrestaurant.model.Availability;
 import com.abcrestaurant.service.AvailabilityService;
 
-@WebServlet("/checkAvailability")
+@WebServlet("/checkava")
 public class AvailabilityController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,7 @@ public class AvailabilityController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/checkAvailability.js").forward(request, response);
+        request.getRequestDispatcher("/checkava.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,11 +38,11 @@ public class AvailabilityController extends HttpServlet {
             Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
             List<Availability> availableSlots = availabilityService.checkAvailability(date, serviceType);
             request.setAttribute("availableSlots", availableSlots);
-            request.getRequestDispatcher("/checkAvailability.js").forward(request, response);
+            request.getRequestDispatcher("/checkava.js").forward(request, response);
         } catch (ParseException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Invalid date format.");
-            request.getRequestDispatcher("/checkAvailability.js").forward(request, response);
+            request.getRequestDispatcher("/checkava.js").forward(request, response);
         }
     }
     }

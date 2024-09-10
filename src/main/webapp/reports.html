@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Restaurant - Sales Reports</title>
+    <title>ABC Restaurant - Management</title>
     <link rel="stylesheet" href="reports.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
@@ -13,14 +14,15 @@
         <div class="logo">
             <img src="logo.png" alt="ABC Restaurant Logo" height="170px" width="210px">
         </div><br><br>
-        <h1>Sales Reports</h1>
+        <h1>Admin Management Dashboard</h1>
         <nav>
             <ul>
                 <li><a href="adminmanage.html">Manage</a></li>
                 <li><a href="reports.html">Reports</a></li>
                 <li><a href="staffreg.html">Staff Registration</a></li>
+                <li><a href="customerreg.html">Customer Registration</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="home.html" >Logout</a></li>
+                <li><a href="home.html">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -28,14 +30,14 @@
     <main>
         <section id="daily-sales">
             <h2>Daily Sales Report</h2>
-            <button onclick="addRow('daily-sales-table')">Click to add a record</button><br><br>
+            <button onclick="addRow('daily-sales-table')">Insert new record</button><br><br>
             <table id="daily-sales-table">
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Item Sold</th>
+                        <th>Item sold</th>
                         <th>Quantity</th>
-                        <th>Total Sales</th>
+                        <th>Total sales</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -57,7 +59,7 @@
 
         <section id="monthly-sales">
             <h2>Monthly Sales Report</h2>
-            <button onclick="addRow('monthly-sales-table')">Click to add a record</button><br><br>
+            <button onclick="addRow('monthly-sales-table')">Insert new record</button><br><br>
             <table id="monthly-sales-table">
                 <thead>
                     <tr>
@@ -79,6 +81,69 @@
                 </tbody>
             </table>
         </section>
+
+        <section id="customer-registration">
+            <h2>Customer Registration</h2>
+            <button onclick="addRow('customer-registration-table')">Click to insert new customer</button><br><br>
+            <table id="customer-registration-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Password</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Hirusha Perera</td>
+                        <td>hirushaperera@gmail.com</td>
+                        <td>0771236589</td>
+                        <td>No.10 Mainstreet, Kandy</td>
+                        <td>pass1234</td>
+                        <td>
+                            <button onclick="editRow(this)">Update</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="staff-registration">
+            <h2>Staff Registration</h2>
+            <button onclick="addRow('staff-registration-table')">Click to insert new staff member</button><br><br>
+            <table id="staff-registration-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Password</th>
+                        <th>Job Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dasun Pathirana</td>
+                        <td>dasunpathirana@gmail.com</td>
+                        <td>0772345678</td>
+                        <td>Dasun123</td>
+                        <td>Chef</td>
+                        <td>
+                            <button onclick="editRow(this)">Update</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
     </main>
 
     <script src="reports.js"></script>

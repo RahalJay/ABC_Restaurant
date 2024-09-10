@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // JavaScript for dynamic offer loading
     const offersContainer = document.getElementById('offers-container');
     const loadOffersButton = document.getElementById('load-offers');
 
-    // Dummy data for offers
     const offers = [
         { id: 1, title: "50% Off on All Pizzas", description: "Get a massive 50% discount on all pizzas this weekend!" },
         { id: 2, title: "Buy One Get One Free", description: "Order any main course and get another absolutely free!" },
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let offersLoaded = 0;
 
     function loadMoreOffers() {
-        const offersToLoad = 2; // Number of offers to load at a time
+        const offersToLoad = 2; 
         for (let i = offersLoaded; i < offersLoaded + offersToLoad && i < offers.length; i++) {
             const offer = offers[i];
             const offerElement = document.createElement('div');
@@ -34,10 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadOffersButton.addEventListener('click', loadMoreOffers);
 
-    // Initial load of offers
     loadMoreOffers();
 
-    // JavaScript for toggling menu categories
     const menuCategories = document.querySelectorAll('.menu-category h2');
 
     menuCategories.forEach(category => {
@@ -51,29 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Additional JavaScript for menu item form submission
     const menuForm = document.getElementById('menu-form');
-    const popup = document.getElementById('popup'); // Popup element
+    const popup = document.getElementById('popup'); 
 
     menuForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the form from submitting the usual way
-
-        // Display popup message
+        event.preventDefault(); 
         popup.style.display = 'block';
 
-        // Hide the popup after 3 seconds
         setTimeout(function () {
             popup.style.display = 'none';
         }, 3000);
 
-        // Send the form data to the servlet
         sendPostRequest();
     });
 
     function sendPostRequest() {
-        const url = '/abcrestaurant/menu'; // Ensure this URL matches your servlet's mapping
+        const url = '/abcrestaurant/menu'; 
 
-        // Collect form data
         const formData = new URLSearchParams();
         formData.append('id', document.getElementById('menu-id').value);
         formData.append('name', document.getElementById('menu-name').value);
@@ -84,15 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded', // Sending data as form URL encoded
+                'Content-Type': 'application/x-www-form-urlencoded', 
             },
-            body: formData.toString(), // Convert form data to URL-encoded string
+            body: formData.toString(), 
         })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.json(); // Assuming the servlet returns a JSON response
+            return response.json(); 
         })
         .then(result => {
             console.log('Success:', result);

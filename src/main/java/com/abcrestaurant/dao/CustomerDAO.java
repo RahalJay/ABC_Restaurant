@@ -11,7 +11,6 @@ import com.abcrestaurant.model.Customer;
 
 public class CustomerDAO {
 	
-    // Method to add a new customer to the database
     public void addCustomer(Customer customer) {
         String query = "INSERT INTO customer (name, email, phone, address, password) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -27,7 +26,6 @@ public class CustomerDAO {
         }
     }
 
-    // Method to retrieve a customer by email
     public Customer getCustomerByEmail(String email) throws SQLException {
         String query = "SELECT * FROM customer WHERE email = ?";
         try (Connection connection = DBConnectionFactory.getConnection();

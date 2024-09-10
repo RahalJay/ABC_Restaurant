@@ -4,12 +4,11 @@ public class Query {
 
     private int queryId;
     private int customerId;
-    private String queryType;  // e.g., "Service", "Reservation"
+    private String queryType;  
     private String queryDescription;
-    private String status;     // e.g., "Pending", "Responded"
-    private String response;   // To store the response from the restaurant staff
+    private String status;     
+    private String response; 
 
-    // Constructor with all fields
     public Query(int queryId, int customerId, String queryType, String queryDescription, String status, String response) {
         this.queryId = queryId;
         this.customerId = customerId;

@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('back.jpg'); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #333;
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #ff4b2b;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Header Styles */
+header {
+    background: rgba(200, 200, 200, 0.2); /* Glass effect */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+header .logo img {
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.6s ease, filter 0.3s ease;
+    filter: brightness(1) contrast(1);
+    transform-style: preserve-3d;
+}
+
+/* Header Image Flip Animation */
+header .logo img:hover {
+    transform: rotateY(180deg);
+    filter: brightness(1.2) contrast(1.2);
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: transparent; /* Glass effect */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Navigation Link Styles */
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px 20px;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+/* Navigation Link Hover Animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #ff4b2b;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Glass effect */
+    color: #ff4b2b;
+    transform: translateY(-3px);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Availability Check Section Styles */
+section#availability-check {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+section#availability-check h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #cb4335;
+}
+
+/* Form Styles */
+form#availability-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form#availability-form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+form#availability-form select,
+form#availability-form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form#availability-form button {
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.5); /* Glass effect */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+form#availability-form button#reset {
+ 
+}
+
+form#availability-form button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    background-color: #239b56; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form#availability-form button#reset:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    background-color: #c0392b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Result Display Styles */
+#result-display {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Popup Styles */
+#popup {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(255, 255, 255, 0.2); /* Glass effect */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}

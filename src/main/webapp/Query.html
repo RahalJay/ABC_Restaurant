@@ -19,9 +19,9 @@
     <nav>
         <ul>
             <li><img src="h1.png" alt="Home" height="35px" width="35px"><a href="home.html">Home</a></li>
-            <li><img src="m1.png" alt="Menu" height="35px" width="35px"><a href="Menu.html">Products & Services</a></li>
+            <li><img src="m1.png" alt="Menu" height="35px" width="35px"><a href="menu.html">Products & Services</a></li>
             <li><img src="a1.png" alt="Availability" height="35px" width="35px"><a href="checkava.html">Check Availability</a></li>
-            <li><img src="q2.png" alt="Queries" height="35px" width="35px"><a href="query.html">Submit Queries</a></li>
+            <li><img src="q2.png" alt="Queries" height="35px" width="35px"><a href="Query.html">Submit Queries</a></li>
             <li><img src="r1.png" alt="Reservations" height="35px" width="35px"><a href="reservation.html">Reservations</a></li>
             <li><img src="p1.png" alt="Payment" height="35px" width="38px"><a href="payment.html">Make Payment</a></li>
             <li><img src="search1.png" alt="Search" height="35px" width="35px"><a href="search.html">Search Facilities</a></li>
@@ -33,15 +33,12 @@
 </header>
 
 <main>
-    <!-- Submit Query Section -->
     <section id="query">
         <h2>Submit a Query</h2>
         <form id="query-form" action="submitQuery" method="POST">
-            <!-- Hidden ID Fields -->
             <input type="hidden" id="query-id" name="queryId" value="">
             <input type="hidden" id="customer-id" name="customerId" value="">
 
-            <!-- Query Type Field -->
             <label for="query-type"><b>Query Type</b></label>
             <select id="query-type" name="queryType" required>
                 <option value="">Select Query Type</option>
@@ -50,17 +47,13 @@
                 <option value="General">General</option>
             </select>
 
-            <!-- Query Description Field -->
             <label for="query-description"><b>Your Message</b></label>
             <textarea id="query-description" name="queryDescription" placeholder="Enter your message here" required></textarea>
 
-            <!-- Status Field (Hidden or default to 'Pending') -->
             <input type="hidden" id="status" name="status" value="Pending">
 
-            <!-- Response Field (Hidden, for staff use) -->
             <input type="hidden" id="response" name="response" value="">
 
-            <!-- Submit and Cancel Buttons -->
             <button type="submit" class="submit-btn">Submit</button><br><br>
             <button type="button" class="cancel-btn" onclick="cancelQuery()">Cancel</button>
         </form>

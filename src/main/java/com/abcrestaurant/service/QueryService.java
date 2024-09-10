@@ -25,17 +25,14 @@ public class QueryService {
         return instance;
     }
 
-    // Method to submit a new query
     public void submitQuery(Query query) throws SQLException {
         queryDAO.addQuery(query);
     }
 
-    // Method to retrieve a query by ID
     public Query getQueryById(int queryId) throws SQLException {
         return queryDAO.getQueryById(queryId);
     }
 
-    // Method to update the response of a query
     public void respondToQuery(int queryId, String response, String status) throws SQLException {
         queryDAO.updateQueryResponse(queryId, response, status);
     }

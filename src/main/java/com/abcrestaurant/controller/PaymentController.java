@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcrestaurant.model.Payment;
 import com.abcrestaurant.service.PaymentService;
 
-@WebServlet("/processPayment")
+@WebServlet("/Payment")
 public class PaymentController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

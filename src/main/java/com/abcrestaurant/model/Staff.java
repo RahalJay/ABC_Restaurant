@@ -9,7 +9,6 @@ public class Staff {
     private String role;
     private String password;
 
-    // Constructor with all fields
     public Staff(int id, String name, String email, String phone, String role, String password) {
         this.id = id;
         this.name = name;

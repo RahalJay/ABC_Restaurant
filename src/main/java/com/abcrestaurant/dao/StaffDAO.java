@@ -10,7 +10,6 @@ import com.abcrestaurant.model.Staff;
 
 public class StaffDAO {
 
-    // Method to add a new staff member to the database
     public void addStaff(Staff staff) {
         String query = "INSERT INTO staff (name, email, phone, role, password) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -26,7 +25,6 @@ public class StaffDAO {
         }
     }
 
-    // Method to retrieve a staff member by email
     public Staff getStaffByEmail(String email) throws SQLException {
         String query = "SELECT * FROM staff WHERE email = ?";
         try (Connection connection = DBConnectionFactory.getConnection();

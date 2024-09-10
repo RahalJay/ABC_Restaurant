@@ -10,7 +10,6 @@ import com.abcrestaurant.model.Query;
 
 public class QueryDAO {
 
-    // Method to add a new query to the database
     public void addQuery(Query query) throws SQLException {
         String queryStr = "INSERT INTO query (customer_id, query_type, query_description, status, response) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -24,7 +23,6 @@ public class QueryDAO {
         }
     }
 
-    // Method to retrieve a query by ID
     public Query getQueryById(int queryId) throws SQLException {
         String queryStr = "SELECT * FROM query WHERE query_id = ?";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -44,7 +42,6 @@ public class QueryDAO {
         return null;
     }
 
-    // Method to update the response and status of a query
     public void updateQueryResponse(int queryId, String response, String status) throws SQLException {
         String queryStr = "UPDATE query SET response = ?, status = ? WHERE query_id = ?";
         try (Connection connection = DBConnectionFactory.getConnection();

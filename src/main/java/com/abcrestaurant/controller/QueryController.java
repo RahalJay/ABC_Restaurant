@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcrestaurant.model.Query;
 import com.abcrestaurant.service.QueryService;
 
-@WebServlet("/submitQuery")  // URL pattern for query submission
+@WebServlet("/query") 
 	public class QueryController extends HttpServlet {
 	    private static final long serialVersionUID = 1L;
 
@@ -34,11 +34,11 @@ import com.abcrestaurant.service.QueryService;
 	            queryService.submitQuery(query);
 	            response.setContentType("text/html");
 	            response.getWriter().write("<div class='popup' style='display: block;'><span class='popup-content'>Query submitted successfully...</span></div>");
-	            response.setHeader("Refresh", "3; URL=queryForm.js");  
+	            response.setHeader("Refresh", "3; URL=query.js");  
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	            request.setAttribute("errorMessage", "Query submission failed. Please try again.");
-	            request.getRequestDispatcher("/queryForm.js").forward(request, response);
+	            request.getRequestDispatcher("/query.js").forward(request, response);
 	        }
 	    }
 	}

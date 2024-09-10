@@ -1,5 +1,3 @@
-// gallery.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.getElementById('lightbox');
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         lightbox.style.display = 'none';
     });
 
-    // Close the lightbox when clicking outside the image
     lightbox.addEventListener('click', function (event) {
         if (event.target === lightbox) {
             lightbox.style.display = 'none';

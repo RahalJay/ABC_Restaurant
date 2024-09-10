@@ -19,7 +19,7 @@ public class Customer {
     }
 
     public Customer() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	// Getters and Setters for all fields

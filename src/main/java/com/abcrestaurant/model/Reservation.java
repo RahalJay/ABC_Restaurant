@@ -8,9 +8,8 @@ public class Reservation {
     private int customerId;
     private java.util.Date reservationDate;
     private String reservationTime;
-    private String reservationType; // e.g., 'dine-in' or 'delivery'
+    private String reservationType; 
 
-    // Constructor with all fields
     public Reservation(int id, int customerId, java.util.Date reservationDate2, String reservationTime, String reservationType) {
         this.id = id;
         this.customerId = customerId;

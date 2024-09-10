@@ -25,7 +25,6 @@ public class AvailabilityService {
         return instance;
     }
 
-    // Method to get available slots for a given date and service type
     public List<Availability> checkAvailability1(java.util.Date date, String serviceType) {
         return availabilityDAO.getAvailability(date, serviceType);
     }

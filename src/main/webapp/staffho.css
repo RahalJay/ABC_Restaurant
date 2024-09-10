@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #34495e;
@@ -55,7 +54,6 @@ nav ul li a:hover {
     border-radius: 20px;
 }
 
-/* Main Content */
 main {
     padding: 20px;
 }

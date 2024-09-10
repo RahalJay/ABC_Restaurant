@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.abcrestaurant.model.Staff;
 import com.abcrestaurant.service.StaffService;
 
-@WebServlet("/staffLogin")
+@WebServlet("/stafflog")
 public class StaffController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -24,7 +24,7 @@ public class StaffController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/staffLogin.js").forward(request, response);
+        request.getRequestDispatcher("/stafflog.js").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,12 +37,12 @@ public class StaffController extends HttpServlet {
                 response.sendRedirect("staffDashboard.js");
             } else {
                 request.setAttribute("errorMessage", "Invalid email or password.");
-                request.getRequestDispatcher("WEB-INF/view/staffLogin.jsp").forward(request, response);
+                request.getRequestDispatcher("/staffLog.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Login failed. Please try again.");
-            request.getRequestDispatcher("/staffLogin.js").forward(request, response);
+            request.getRequestDispatcher("/staffLog.js").forward(request, response);
         }
     }
 }

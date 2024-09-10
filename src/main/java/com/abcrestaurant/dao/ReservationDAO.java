@@ -13,7 +13,6 @@ import com.abcrestaurant.model.Reservation;
 
 public class ReservationDAO {
 
-    // Method to add a new reservation to the database
     public void addReservation(Reservation reservation) {
         String query = "INSERT INTO reservation (customer_id, reservation_date, reservation_time, reservation_type) VALUES (?, ?, ?, ?)";
         try (Connection connection = DBConnectionFactory.getConnection();
@@ -28,7 +27,6 @@ public class ReservationDAO {
         }
     }
 
-    // Method to retrieve all reservations
     public List<Reservation> getAllReservations() {
         List<Reservation> reservations = new ArrayList<>();
         String query = "SELECT * FROM reservation";
@@ -49,7 +47,6 @@ public class ReservationDAO {
         return reservations;
     }
 
-    // Method to retrieve reservations by customer ID
     public List<Reservation> getReservationsByCustomerId(int customerId) {
         List<Reservation> reservations = new ArrayList<>();
         String query = "SELECT * FROM reservation WHERE customer_id = ?";

@@ -26,10 +26,9 @@ public class StaffService {
     }
 
     public void registerStaff(String name, String email, String phone, String role, String password) {
-        // Create a new Staff object
+
         Staff staff = new Staff(0, name, email, phone, role, password);
         
-        // Add the new staff using DAO
         staffDAO.addStaff(staff);
     }
 

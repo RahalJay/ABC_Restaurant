@@ -7,10 +7,9 @@ public class Availability {
     private int id;
     private java.util.Date date;
     private String timeSlot;
-    private int availableSlots; // Number of available slots (tables or time slots)
-    private String serviceType; // e.g., 'dine-in', 'delivery', etc.
+    private int availableSlots; 
+    private String serviceType; 
 
-    // Constructor
     public Availability(int id, java.util.Date date2, String timeSlot, int availableSlots, String serviceType) {
         this.id = id;
         this.date = date2;

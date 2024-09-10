@@ -1,4 +1,3 @@
-// Manage Reservations
 function addReservationRow() {
     const table = document.getElementById('reservations-table').getElementsByTagName('tbody')[0];
     const newRow = table.insertRow();
@@ -30,13 +29,11 @@ function confirmReservation(button) {
         <button onclick="deleteRow(this)">Delete</button>`;
 }
 
-// Delete a row
 function deleteRow(button) {
     const row = button.parentNode.parentNode;
     row.parentNode.removeChild(row);
 }
 
-// Handle form submission
 document.getElementById('query-form').addEventListener('submit', function(event) {
     event.preventDefault();
     alert('Query response sent!');
@@ -49,8 +46,7 @@ document.getElementById('payment-form').addEventListener('submit', function(even
     this.reset();
 });
 
-// Logout
 function logout() {
     alert('Logging out...');
-    window.location.href = 'homepage.html';  // Replace with the actual home page URL
+    window.location.href = 'homepage.html'; 
 }

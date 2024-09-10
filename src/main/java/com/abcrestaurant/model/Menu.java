@@ -8,7 +8,6 @@ public class Menu {
     private double price;
     private String category;
 
-    // Constructor with all fields
     public Menu(int id, String name, String description, double price, String category) {
         this.id = id;
         this.name = name;

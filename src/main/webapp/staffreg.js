@@ -1,25 +1,19 @@
-// staffreg.js
-
 document.getElementById('registration-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Display popup message
     const popup = document.getElementById('popup');
     popup.style.display = 'block';
 
-    // Hide the popup after 3 seconds
     setTimeout(function() {
         popup.style.display = 'none';
     }, 3000);
 
-    // Send the form data to the servlet
     sendPostRequest();
 });
 
 function sendPostRequest() {
-    const url = '/abcresturant/staff'; // Ensure this URL matches your servlet's mapping
+    const url = '/abcresturant/staff'; 
 
-    // Collect form data
     const formData = new URLSearchParams();
     formData.append('id', document.getElementById('id').value);
     formData.append('name', document.getElementById('name').value);
@@ -31,15 +25,15 @@ function sendPostRequest() {
     fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded', // Sending data as form URL encoded
+            'Content-Type': 'application/x-www-form-urlencoded', 
         },
-        body: formData.toString(), // Convert form data to URL-encoded string
+        body: formData.toString(), 
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); // Assuming the servlet returns a JSON response
+        return response.json(); 
     })
     .then(result => {
         console.log('Success:', result);
@@ -49,7 +43,6 @@ function sendPostRequest() {
     });
 }
 
-// Cancel button redirects to admin manage page
 document.getElementById('cancel').addEventListener('click', function() {
     window.location.href = 'adminmanage.html';
 });

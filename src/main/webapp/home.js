@@ -1,9 +1,7 @@
-// JavaScript for dynamic offer loading and viewing offers
 document.addEventListener('DOMContentLoaded', function () {
     const offersContainer = document.getElementById('offers-container');
     const loadOffersButton = document.getElementById('load-offers');
 
-    // Dummy data for offers
     const offers = [
         { id: 1, title: "50% Off on All Pizzas", description: "Get a massive 50% discount on all pizzas this weekend!" },
         { id: 2, title: "Buy One Get One Free", description: "Order any main course and get another absolutely free!" },
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let offersLoaded = 0;
 
     function loadMoreOffers() {
-        const offersToLoad = 1; // Number of offers to load at a time
+        const offersToLoad = 1; 
         for (let i = offersLoaded; i < offersLoaded + offersToLoad && i < offers.length; i++) {
             const offer = offers[i];
             const offerElement = document.createElement('div');
@@ -34,10 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadOffersButton.addEventListener('click', loadMoreOffers);
 
-    // Initial load of offers
     loadMoreOffers();
 
-    // Add click event to each offer item to show modal
     offersContainer.addEventListener('click', function (event) {
         if (event.target.closest('.offer-item')) {
             const offerTitle = event.target.closest('.offer-item').querySelector('h3').innerText;
